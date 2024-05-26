@@ -36,7 +36,7 @@
             this.lblPrimerApellido = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSegundoApellido = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.lblDocumento = new System.Windows.Forms.Label();
             this.CboTipoDocumento = new System.Windows.Forms.ComboBox();
@@ -83,6 +83,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(142, 22);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // lblSeundoNombre
             // 
@@ -100,6 +102,7 @@
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(142, 22);
             this.txtSegundoNombre.TabIndex = 3;
+            this.txtSegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombre_KeyPress);
             // 
             // lblPrimerApellido
             // 
@@ -127,13 +130,16 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(142, 22);
             this.textBox2.TabIndex = 6;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
-            // textBox3
+            // txtSegundoApellido
             // 
-            this.textBox3.Location = new System.Drawing.Point(929, 246);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 22);
-            this.textBox3.TabIndex = 7;
+            this.txtSegundoApellido.Location = new System.Drawing.Point(929, 246);
+            this.txtSegundoApellido.Name = "txtSegundoApellido";
+            this.txtSegundoApellido.Size = new System.Drawing.Size(142, 22);
+            this.txtSegundoApellido.TabIndex = 7;
+            this.txtSegundoApellido.TextChanged += new System.EventHandler(this.txtSegundoApellido_TextChanged);
+            this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox5
             // 
@@ -142,6 +148,7 @@
             this.textBox5.Size = new System.Drawing.Size(142, 22);
             this.textBox5.TabIndex = 9;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // lblDocumento
             // 
@@ -297,6 +304,8 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(142, 22);
             this.textBox4.TabIndex = 18;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // lblFechaNacimiento
             // 
@@ -339,6 +348,7 @@
             this.cboSexo.Name = "cboSexo";
             this.cboSexo.Size = new System.Drawing.Size(142, 24);
             this.cboSexo.TabIndex = 22;
+            this.cboSexo.SelectedIndexChanged += new System.EventHandler(this.cboSexo_SelectedIndexChanged);
             // 
             // lblOrientaciónSexual
             // 
@@ -421,6 +431,7 @@
             this.cboSede.Name = "cboSede";
             this.cboSede.Size = new System.Drawing.Size(142, 24);
             this.cboSede.TabIndex = 28;
+            this.cboSede.SelectedIndexChanged += new System.EventHandler(this.cboSede_SelectedIndexChanged);
             // 
             // lblFacultad
             // 
@@ -560,7 +571,7 @@
             this.Controls.Add(this.CboTipoDocumento);
             this.Controls.Add(this.lblDocumento);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtSegundoApellido);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPrimerApellido);
@@ -589,7 +600,7 @@
         private System.Windows.Forms.Label lblPrimerApellido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSegundoApellido;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.ComboBox CboTipoDocumento;

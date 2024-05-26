@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAutenticacion));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.bttAceptar = new System.Windows.Forms.Button();
+            this.Error = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -68,6 +71,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(191, 22);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // txtContraseña
             // 
@@ -77,6 +81,7 @@
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(191, 22);
             this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // bttCancelar
             // 
@@ -102,6 +107,10 @@
             this.bttAceptar.UseVisualStyleBackColor = true;
             this.bttAceptar.Click += new System.EventHandler(this.bttAceptar_Click);
             // 
+            // Error
+            // 
+            this.Error.ContainerControl = this;
+            // 
             // frmAutenticacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -119,6 +128,8 @@
             this.MinimizeBox = false;
             this.Name = "frmAutenticacion";
             this.Text = "Autenticación";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmAutenticacion_KeyPress);
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +143,7 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button bttCancelar;
         private System.Windows.Forms.Button bttAceptar;
+        private System.Windows.Forms.ErrorProvider Error;
     }
 }
 
