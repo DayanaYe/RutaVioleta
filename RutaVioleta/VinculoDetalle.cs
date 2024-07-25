@@ -53,7 +53,12 @@ namespace RutaVioleta
 
         private void bttCancelar2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quieres cancelar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Cerrar el formulario si el usuario selecciona "Sí"
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

@@ -51,11 +51,10 @@ namespace RutaVioleta
 
         private void bttSiguiente1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(txtSegundoNombre.Text) || 
-                string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox5.Text) || 
-                string.IsNullOrWhiteSpace(txtSegundoApellido.Text)|| string.IsNullOrWhiteSpace(textBox4.Text) || (CboTipoDocumento.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox5.Text) || 
+                string.IsNullOrWhiteSpace(textBox4.Text) || (CboTipoDocumento.SelectedIndex == -1)
                 || (CboDepartamentoResidencia.SelectedIndex == -1) || (cboSexo.SelectedIndex == -1) || (cboOrientaciónSexual.SelectedIndex == -1)
-                || (cboIdentidadGenero.SelectedIndex == -1) || (comboBox1.SelectedIndex == -1))
+                || (cboIdentidadGenero.SelectedIndex == -1) || (comboBox1.SelectedIndex == -1) || (cboMunicipioResidencia.SelectedIndex== -1))
             {
                 MessageBox.Show("No se puede dejar espacios sin responder");
                 return;
@@ -172,6 +171,12 @@ namespace RutaVioleta
         private void cboSede_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+       
+        private void CboDepartamentoResidencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }   

@@ -236,6 +236,7 @@
             this.CboDepartamentoResidencia.Name = "CboDepartamentoResidencia";
             this.CboDepartamentoResidencia.Size = new System.Drawing.Size(142, 24);
             this.CboDepartamentoResidencia.TabIndex = 14;
+            this.CboDepartamentoResidencia.SelectedIndexChanged += new System.EventHandler(this.CboDepartamentoResidencia_SelectedIndexChanged);
             // 
             // lblMunicipioResidencia
             // 
