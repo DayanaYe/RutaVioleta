@@ -33,7 +33,12 @@ namespace RutaVioleta
         }
 
         private void bttSiguiente1_Click(object sender, EventArgs e)
-        {
+        {    
+            if (checkedListBox1.CheckedItems.Count == 0  || checkedListBox2.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("No se puede dejar espacios sin responder");
+                return;
+            }
             TipoViolencia tercerform = new TipoViolencia();
             tercerform.Show();
             this.Close();
@@ -48,7 +53,31 @@ namespace RutaVioleta
 
         private void bttCancelar2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quieres cancelar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Cerrar el formulario si el usuario selecciona "Sí"
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Cancelar el efecto de la tecla presionada
+                e.Handled = true;
+            }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

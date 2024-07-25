@@ -31,7 +31,12 @@ namespace RutaVioleta
 
         private void bttCancelar4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quieres cancelar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Cerrar el formulario si el usuario selecciona "Sí"
+            }
         }
 
         private void TipoViolenciaPrejuicio_Load(object sender, EventArgs e)
@@ -46,7 +51,18 @@ namespace RutaVioleta
 
         private void bttGuardar2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (checkedListBox1.CheckedItems.Count == 0 || checkedListBox2.CheckedItems.Count == 0 ||
+                checkedListBox3.CheckedItems.Count == 0 || checkedListBox4.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("No se puede dejar espacios sin responder");
+                return;
+            }
+            if (checkedListBox1.CheckedItems.Count == 1 || checkedListBox2.CheckedItems.Count == 1 ||
+                checkedListBox3.CheckedItems.Count == 1 || checkedListBox4.CheckedItems.Count == 1)
+            {
+                MessageBox.Show("Sus datos han sido guardados correctamente");
+            }
+                this.Close();
         }
     }
 }
